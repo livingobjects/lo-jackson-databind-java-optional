@@ -39,7 +39,6 @@ public class JavaOptionalModuleTest {
         final Bean bean = new Bean();
         final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();
         final String jsonText = mapper.writeValueAsString(bean);
-        System.out.println(jsonText);
         final JsonNode node = mapper.readTree(jsonText);
         assertTrue(node.get("empty").isNull());
         assertTrue(node.get("notSet").isNull());

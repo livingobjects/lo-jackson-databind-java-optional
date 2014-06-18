@@ -5,6 +5,22 @@ A shim library to support mapping Java8 Optional through Jackson. Forked from @r
 This library is compiled with Java8 and will thus only useful in a Java 8 (or higher) runtime environment. 
 
 ## Usage
+### Maven dependency
+```xml
+        <dependency>
+            <groupId>org.zapodot</groupId>
+            <artifactId>jackson-databind-java-optional</artifactId>
+            <version>2.4.0-SNAPSHOT</version>
+        </dependency>
+```
+
+### SBT
+```scala
+    libraryDependencies += "org.zapodot" % "jackson-databind-java-optional" % "2.4.0-SNAPSHOT" changing()
+```
+
+
+### Registering module
 The module is auto-discoverable using the Jackson ObjectMappers's findAndRegisterModules method
 
 ```java

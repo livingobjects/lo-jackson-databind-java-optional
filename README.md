@@ -1,8 +1,8 @@
 # jackson-databind-java-optional
+[![Build Status](https://travis-ci.org/zapodot/jackson-databind-java-optional.svg)](https://travis-ci.org/zapodot/jackson-databind-java-optional)
+A shim library to support mapping Java 8 Optional through Jackson. Forked from @realjenuis jackson-databind-java8 project.
 
-A shim library to support mapping Java8 Optional through Jackson. Forked from @realjenuis jackson-databind-java8 project.
-
-This library is compiled with Java8 and will thus only useful in a Java 8 (or higher) runtime environment. 
+This library is compiled with Java 8 and will thus only useful in a Java 8 (or higher) runtime environment. 
 
 ## Usage
 The library is distributed through Sonatype's OSS repo

@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
@@ -9,9 +9,9 @@ import java.util.Optional;
 /**
  * @author R.J. Lorimer [rj@realjenius.com]
  */
-public class Java8OptionalBeanPropertyWriter extends BeanPropertyWriter {
+public class JavaOptionalBeanPropertyWriter extends BeanPropertyWriter {
 
-    protected Java8OptionalBeanPropertyWriter(BeanPropertyWriter base) {
+    protected JavaOptionalBeanPropertyWriter(BeanPropertyWriter base) {
         super(base);
     }
 

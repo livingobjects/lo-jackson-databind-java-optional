@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -12,9 +12,9 @@ import java.util.Optional;
 /**
  * @author R.J. Lorimer [rj@realjenius.com]
  */
-public class Java8OptionalSerializer extends StdSerializer<Optional<?>> {
+public class JavaOptionalSerializer extends StdSerializer<Optional<?>> {
 
-    public Java8OptionalSerializer(JavaType type) {
+    public JavaOptionalSerializer(JavaType type) {
         super(type);
     }
     @Override

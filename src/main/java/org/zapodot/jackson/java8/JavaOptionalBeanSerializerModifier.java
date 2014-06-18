@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.databind.BeanDescription;
 import com.fasterxml.jackson.databind.SerializationConfig;
@@ -12,13 +12,13 @@ import java.util.stream.Collectors;
 /**
  * @author R.J. Lorimer [rj@realjenius.com]
  */
-public class Java8BeanSerializerModifier extends BeanSerializerModifier {
+public class JavaOptionalBeanSerializerModifier extends BeanSerializerModifier {
     @Override
     public List<BeanPropertyWriter> changeProperties(SerializationConfig config, BeanDescription beanDesc, List<BeanPropertyWriter> beanProperties) {
         return beanProperties.stream().map((w) -> {
             BeanPropertyWriter mapping = w;
             if (Optional.class.isAssignableFrom(w.getPropertyType())) {
-                mapping = new Java8OptionalBeanPropertyWriter(w);
+                mapping = new JavaOptionalBeanPropertyWriter(w);
             }
             return mapping;
         }).collect(Collectors.toList());

@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class Java8ModuleTest {
+public class JavaOptionalModuleTest {
 
     public static class Bean {
 
@@ -30,7 +30,7 @@ public class Java8ModuleTest {
 
     @Test
     public void testAutoDetect() throws Exception {
-        assertEquals(1L, ObjectMapper.findModules().stream().filter(m -> m instanceof Java8Module).count());
+        assertEquals(1L, ObjectMapper.findModules().stream().filter(m -> m instanceof JavaOptionalModule).count());
 
     }
 

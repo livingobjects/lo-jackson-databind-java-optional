@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,10 +12,10 @@ import java.util.Optional;
 /**
  * @author R.J. Lorimer [rj@realjenius.com]
  */
-public class Java8OptionalDeserializer extends StdDeserializer<Optional<?>> {
+public class JavaOptionalDeserializer extends StdDeserializer<Optional<?>> {
     private final JavaType _referenceType;
 
-    public Java8OptionalDeserializer(JavaType valueType) {
+    public JavaOptionalDeserializer(JavaType valueType) {
         super(valueType);
         _referenceType = valueType.containedType(0);
     }

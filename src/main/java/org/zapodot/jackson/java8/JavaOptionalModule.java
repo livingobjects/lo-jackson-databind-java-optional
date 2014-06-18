@@ -1,4 +1,4 @@
-package realjenius.jackson.java8;
+package org.zapodot.jackson.java8;
 
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.Module;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.Module;
  *
  * @author R.J. Lorimer [rj@realjenius.com]
  */
-public class Java8Module extends Module {
+public class JavaOptionalModule extends Module {
 
     @Override
     public String getModuleName() {
@@ -24,9 +24,9 @@ public class Java8Module extends Module {
 
     @Override
     public void setupModule(SetupContext context) {
-        context.addDeserializers(new Java8Deserializers());
-        context.addSerializers(new Java8Serializers());
-        context.addBeanSerializerModifier(new Java8BeanSerializerModifier());
+        context.addDeserializers(new JavaOptionalDeserializers());
+        context.addSerializers(new JavaOptionalSerializers());
+        context.addBeanSerializerModifier(new JavaOptionalBeanSerializerModifier());
     }
 
 }

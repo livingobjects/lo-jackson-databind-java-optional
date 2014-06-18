@@ -2,10 +2,10 @@
 
 A shim library to support mapping Java8 Optional through Jackson. Forked from @realjenuis jackson-databind-java8 project.
 
-This library is compiled with Java8 and thus can only be used in a Java 8 (or higher) environment. 
+This library is compiled with Java8 and will thus only useful in a Java 8 (or higher) runtime environment. 
 
 ## Usage
-The modules is auto discoverable using the Jackson ObjectMappers's findAndRegisterModules method
+The module is auto-discoverable using the Jackson ObjectMappers's findAndRegisterModules method
 
 ```java
 final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();

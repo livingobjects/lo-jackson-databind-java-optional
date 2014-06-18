@@ -5,6 +5,7 @@ A shim library to support mapping Java8 Optional through Jackson. Forked from @r
 This library is compiled with Java8 and will thus only useful in a Java 8 (or higher) runtime environment. 
 
 ## Usage
+The library is distributed through Sonatype's OSS repo
 ### Maven dependency
 ```xml
         <dependency>

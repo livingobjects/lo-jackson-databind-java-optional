@@ -18,14 +18,27 @@
             <id>realjenius</id>
             <email>rj@realjenius.com</email>
             <name>R.J Lorimer</name>
+            <roles>
+                <role>original developer</role>
+            </roles>
         </developer> 
         <developer>
             <id>zapodot</id>
             <email>zapodot@gmail.com</email>
             <name>Sondre Eikanger Kvalø</name>
+            <roles>
+                <role>maintainer</role>
+            </roles>
         </developer>
        
     </developers>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>license.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
     <properties>
         <junit.version>4.11</junit.version>
         <jackson-core.version>2.4.0</jackson-core.version>

@@ -38,7 +38,9 @@ public class JavaOptionalModuleTest {
     public void testSerialize() throws Exception {
         final Bean bean = new Bean();
         final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();
-        final JsonNode node = mapper.readTree(mapper.writeValueAsString(bean));
+        final String jsonText = mapper.writeValueAsString(bean);
+        System.out.println(jsonText);
+        final JsonNode node = mapper.readTree(jsonText);
         assertTrue(node.get("empty").isNull());
         assertTrue(node.get("notSet").isNull());
         assertEquals(Bean.PRESENT_VALUE, node.get("present").asText());

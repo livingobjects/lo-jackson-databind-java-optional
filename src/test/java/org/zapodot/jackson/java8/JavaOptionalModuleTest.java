@@ -35,6 +35,19 @@ public class JavaOptionalModuleTest {
     }
 
     @Test
+    public void testRegisterManually() throws Exception {
+        final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaOptionalModule());
+        final Bean bean = objectMapper
+                .readValue("{\"empty\":null,\"notSet\":null}", Bean.class);
+        assertNotNull(bean.empty);
+        assertEquals(Optional.empty(), bean.empty);
+        assertNotNull(bean.notSet);
+        assertEquals(Optional.empty(), bean.notSet);
+        assertEquals(Optional.of(Bean.PRESENT_VALUE), bean.present);
+
+    }
+
+    @Test
     public void testSerialize() throws Exception {
         final Bean bean = new Bean();
         final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();

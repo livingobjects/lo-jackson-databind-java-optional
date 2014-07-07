@@ -29,6 +29,11 @@ The module is auto-discoverable using the Jackson ObjectMappers's findAndRegiste
 final ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();
 ```
 
+If you are not to crazy about using auto discovery, you can always register the module manually
+```java
+final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaOptionalModule());
+```
+
 ### Serialization
 Empty Optionals will be serialized as JSON nulls.
 Example:

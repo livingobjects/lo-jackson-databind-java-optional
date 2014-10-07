@@ -41,8 +41,8 @@
     </licenses>
     <properties>
         <junit.version>4.11</junit.version>
-        <jackson-core.version>2.4.2</jackson-core.version>
-        <jackson-databind.version>2.4.2</jackson-databind.version>
+        <jackson-core.version>2.4.3</jackson-core.version>
+        <jackson-databind.version>${jackson-core.version}</jackson-databind.version>
     </properties>
     <dependencies>
         <dependency>

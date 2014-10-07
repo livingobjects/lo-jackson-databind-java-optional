@@ -1,5 +1,6 @@
 package org.zapodot.jackson.java8;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -68,5 +69,14 @@ public class JavaOptionalModuleTest {
         assertEquals(Optional.empty(), bean.notSet);
         assertEquals(Optional.of(Bean.PRESENT_VALUE), bean.present);
 
+    }
+
+    @Test
+    public void testSerializeIgnoreNull() throws Exception {
+        final Bean originalBean = new Bean();
+        final ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        final String json = objectMapper.writeValueAsString(originalBean);
+        assertEquals("{\"present\":\"present\"}", json);
     }
 }

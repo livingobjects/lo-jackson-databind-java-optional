@@ -8,9 +8,7 @@ import org.junit.Test;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class JavaOptionalModuleTest {
 
@@ -57,6 +55,19 @@ public class JavaOptionalModuleTest {
         assertTrue(node.get("empty").isNull());
         assertTrue(node.get("notSet").isNull());
         assertEquals(Bean.PRESENT_VALUE, node.get("present").asText());
+    }
+
+    @Test
+    public void testSerializeNonNull() throws Exception {
+        final Bean bean = new Bean();
+        final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaOptionalModule());
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        final String jsonText = objectMapper.writeValueAsString(bean);
+        final JsonNode node = objectMapper.readTree(jsonText);
+        assertNull(node.get("empty"));
+        assertNull(node.get("notSet"));
+        assertEquals(Bean.PRESENT_VALUE, node.get("present").asText());
+
     }
 
     @Test

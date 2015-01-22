@@ -40,7 +40,7 @@
         </license>
     </licenses>
     <properties>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <jackson-core.version>2.4.4</jackson-core.version>
         <jackson-databind.version>${jackson-core.version}</jackson-databind.version>
     </properties>
@@ -60,6 +60,12 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-afterburner</artifactId>
+            <version>${jackson-core.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
